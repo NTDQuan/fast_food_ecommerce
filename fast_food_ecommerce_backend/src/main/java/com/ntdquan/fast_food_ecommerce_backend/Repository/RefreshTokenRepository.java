@@ -10,4 +10,5 @@ import com.ntdquan.fast_food_ecommerce_backend.Model.RefreshToken;
 @Repository
 public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long> {
 	Optional<RefreshToken> findByToken(String token);
+	void deleteByUser_Id(Long id);
 }

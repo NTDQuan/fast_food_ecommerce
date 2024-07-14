@@ -1,0 +1,10 @@
+.main-page {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+
+.main-page ImageSlider {
+    width: 100%;
+    height: 40%;
+}

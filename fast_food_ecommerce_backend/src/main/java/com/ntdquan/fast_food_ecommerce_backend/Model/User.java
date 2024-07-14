@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import com.ntdquan.fast_food_ecommerce_backend.Enum.RoleEnum;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -31,6 +32,7 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private RoleEnum role;
 	
+	@Column(unique = true)
 	private String username;
 	private String password;
 	

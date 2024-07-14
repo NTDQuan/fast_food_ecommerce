@@ -18,6 +18,7 @@ import io.jsonwebtoken.security.Keys;
 @Component
 public class JwtService {
 	public static final String SECRETKEY = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+	public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60 * 1000;
 	
 	public String extractUsername(String token) {
 		return extractClaim(token, Claims::getSubject);
@@ -60,7 +61,7 @@ public class JwtService {
 				.setClaims(claims)
 				.setSubject(userName)
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis()))
+				.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY))
 				.signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
 	}
 	

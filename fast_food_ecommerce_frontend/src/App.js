@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import MainPage from './Pages/MainPage/MainPage';
+import FrontWebLayout from './Pages/FrontWebLayout/FrontWebLayout';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <div className="page-wrapper">
+          <Routes>
+            <Route path='/' element={<FrontWebLayout />}>
+              <Route index element={<MainPage />} />
+            </Route>
+          </Routes>
+        </div>
+      </AuthProvider>
     </div>
   );
 }

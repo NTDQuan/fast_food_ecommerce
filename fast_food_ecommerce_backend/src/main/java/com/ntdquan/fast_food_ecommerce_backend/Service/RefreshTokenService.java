@@ -11,6 +11,8 @@ import com.ntdquan.fast_food_ecommerce_backend.Model.RefreshToken;
 import com.ntdquan.fast_food_ecommerce_backend.Repository.RefreshTokenRepository;
 import com.ntdquan.fast_food_ecommerce_backend.Repository.UserRepository;
 
+import jakarta.transaction.Transactional;
+
 
 @Service
 public class RefreshTokenService {
@@ -20,6 +22,7 @@ public class RefreshTokenService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@Transactional
 	public RefreshToken createRefreshToken(String username) {
 		RefreshToken refreshToken = new RefreshToken();
 		refreshToken.setUser(userRepository.findByUsername(username).get());
@@ -32,6 +35,7 @@ public class RefreshTokenService {
 		return refreshTokenRepository.findByToken(token);
 	}
 	
+	@Transactional
 	public RefreshToken verifyExpiration(RefreshToken token) {
 		if (token.getExpiryDate().compareTo(Instant.now()) < 0) {
 			refreshTokenRepository.delete(token);
@@ -39,4 +43,9 @@ public class RefreshTokenService {
 		}
 		return token;
 	}
+	
+	@Transactional
+    public void deleteByUserID(Long id) {
+        refreshTokenRepository.deleteByUser_Id(id);
+    }
 }

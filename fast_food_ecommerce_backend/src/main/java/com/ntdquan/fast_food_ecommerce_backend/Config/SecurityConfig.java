@@ -34,7 +34,7 @@ public class SecurityConfig {
 		return http
 				.csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests(
-						req->req.requestMatchers("/auth/**").permitAll()
+						req->req.requestMatchers("/api/v1/auth/**").permitAll()
 						.anyRequest().permitAll()
 				).userDetailsService(userDetailService)
 				.sessionManagement(session->session

@@ -1,0 +1,15 @@
+.front-web-layout {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.front-web-layout .front-web-header {
+    width: 100%;
+    height: 15%; /* Change height to auto */
+    display: flex; /* Ensure it uses flexbox if necessary */
+    align-items: center; /* Center the content vertically if needed */
+    justify-content: center; /* Center the content horizontally if needed */
+    background-color: #E21E2C; /* Background color for visibility */
+}

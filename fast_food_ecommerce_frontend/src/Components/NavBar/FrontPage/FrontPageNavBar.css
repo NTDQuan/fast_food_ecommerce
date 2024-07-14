@@ -1,0 +1,91 @@
+.front-page-nav-bar {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.front-page-nav-bar .nav-bar-contain {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+    justify-content: space-between;
+    background-color: #E21E2C;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-middle .nav-bar-menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-middle .nav-bar-menu ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    list-style: none;
+    font-weight: bold;
+    position: static;
+    border-radius: 10px 10px 0 0;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-middle .nav-bar-menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 10px;
+    border-radius: 10px 10px 0 0;
+    font-size: 16px;
+    letter-spacing: .005em;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-middle .nav-bar-menu ul li a:hover,
+.front-page-nav-bar .nav-bar-contain .nav-bar-middle .nav-bar-menu ul li a.active {
+    background-color: #F4D2D6;
+    color: #e31837;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-left {
+    width: 10%;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-left .nav-bar-logo img {
+    max-height: inherit;
+    margin: 10px auto;
+    max-width: 90px;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-right {
+    width: 20%;
+    text-align: right;
+    align-items: center;
+    justify-content: flex-end;
+    float: right;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-right .nav-bar-authentication {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-right .nav-bar-authentication .nav-bar-authentication-contain .nav-bar-authentication-button {
+    background-color: #ffc522;
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+    min-width: 111px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.front-page-nav-bar .nav-bar-contain .nav-bar-right .nav-bar-authentication .nav-bar-authentication-contain .nav-bar-authentication-avatar {
+    width: 40px;
+    height: 40px;
+}

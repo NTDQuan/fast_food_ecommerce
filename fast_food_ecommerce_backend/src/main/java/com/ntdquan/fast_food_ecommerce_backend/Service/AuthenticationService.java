@@ -65,6 +65,7 @@ public class AuthenticationService {
 						"Refresh token is not in database!"));
 	}
 	
+	
 	public AuthenticationResponse customerRegister(User request) {
 		User user = new User();
 		user.setUsername(request.getUsername());
@@ -80,4 +81,8 @@ public class AuthenticationService {
 		String token = jwtService.generateToken(user.getUsername());
 		return new AuthenticationResponse(token);
 	}
+	
+    public void logoutUser(String username) {
+        userRepository.findByUsername(username).ifPresent(user -> refreshTokenService.deleteByUserID(user.getId()));
+    }
 }
